@@ -1,6 +1,6 @@
 # **Holocub V2 – 16×16×16 RGB LED Cube**
 
-![LED Cube Example](docs/images/cube_placeholder.jpg)  
+![LED Cube Example](docs\Videos\Prototype.mp4)  
 *A fully addressable 3D LED display for animations, games, and visual effects.*
 
 ---
@@ -27,6 +27,47 @@ The cube is controlled by a microcontroller (planned: **RPi Pico 2W / other capa
 | **Storage**                   | MicroSD card (frame/animation storage) |
 | **Power Injection**           | Multiple injection points per strip |
 | **Estimated Max Power**       | ~1.23 kW at full white (theoretical max) |
+
+---
+
+# HoloBoard – PCB by Dragoș
+
+**Short description**  
+HoloBoard is a custom PCB designed for the Holocub project, acting as the main control and interface board.  
+It hosts a Raspberry Pi Pico 2W, integrates a piezo buzzer, and features two bidirectional logic-level shifters for safe communication between 3.3V and 5V components.
+
+## 🔧 Key Features
+- **MCU Slot:** Raspberry Pi Pico 2W header footprint (solder-in or socket).
+- **Audio Output:** 1 × piezo buzzer connector (with optional series resistor).
+- **Level Shifting:** 2 × bidirectional level shifter circuits (BSS138 + pull-ups) for 3.3V ↔ 5V I²C/UART/peripherals.
+- **Power Control:** Power selector header (3.3V / 5V) with decoupling capacitors.
+- **Connectivity:** I²C SDA / SCL breakout to convenient pads + screw terminals.
+- **Build Quality:** Silk labels for pins, test pads, and mounting holes.
+
+## 📦 Minimal BOM
+- 1 × RP2040 (Pico 2W) socket / header footprint
+- Headers, pads, mounting hardware
+- Yet to add more info
+
+---
+
+## 📜 Schematics & Photos
+
+### **Schematic – Level Shifter**
+![HoloBoard schematic](docs/images/holoboard_schematic_lvshifter.png)  
+*Figure 1 — 24HCT245D bidirectional logic level shifter on the HoloBoard.*
+
+### **Schematic – Power & Buzzer**
+![HoloBoard datasheet](docs\images\datasheet.png)  
+*Figure 2 — components used, I/O's, connections.*
+
+### **Photo – Assembled (Front)**
+![HoloBoard assembled — front](docs\images\front_assembled.jpg)  
+*Figure 3 — Front view, Pico 2W inserted.*
+
+### **Photo – Assembled (Back / Solder Side)**
+![HoloBoard assembled — back](docs\images\back_assembled.jpg)  
+*Figure 4 — Back view showing soldering and Logo.*
 
 ---
 
@@ -98,4 +139,4 @@ pio run --target upload
 
 ## 🙌 Credits
 - **Core team:** [Bernea Dragoș Dada & Teodosiu Radu]
-- **Special thanks:** MaltWiskey (inspiration & reference designs), Adafruit (NeoPixel library), the cpp GODS.
+- **Special thanks:** MaltWiskey (inspiration & reference designs), Adafruit (NeoPixel library) and The C++ GODS.
