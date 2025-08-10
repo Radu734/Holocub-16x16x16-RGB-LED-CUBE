@@ -1,6 +1,6 @@
 # **Holocub V2 – 16×16×16 RGB LED Cube**
 
-![LED Cube Example](docs\Videos\Prototype.mp4)  
+![LED Cube Example](docs/Videos/Prototype.mp4)  
 *A fully addressable 3D LED display for animations, games, and visual effects.*
 
 ---
@@ -54,19 +54,19 @@ It hosts a Raspberry Pi Pico 2W, integrates a piezo buzzer, and features two bid
 ## 📜 Schematics & Photos
 
 ### **Schematic – Level Shifter**
-![HoloBoard schematic](docs/images/holoboard_schematic_lvshifter.png)  
-*Figure 1 — 24HCT245D bidirectional logic level shifter on the HoloBoard.*
+![HoloBoard schematic](docs/images/schematic.png)  
+*Figure 1 — The HoloBoard schematic in KeyCad.*
 
 ### **Schematic – Power & Buzzer**
-![HoloBoard datasheet](docs\images\datasheet.png)  
+![HoloBoard datasheet](docs/images/datasheet.png)  
 *Figure 2 — components used, I/O's, connections.*
 
 ### **Photo – Assembled (Front)**
-![HoloBoard assembled — front](docs\images\front_assembled.jpg)  
+![HoloBoard assembled — front](docs/images/front_assembled.jpg)  
 *Figure 3 — Front view, Pico 2W inserted.*
 
 ### **Photo – Assembled (Back / Solder Side)**
-![HoloBoard assembled — back](docs\images\back_assembled.jpg)  
+![HoloBoard assembled — back](docs/images/back_assembled.jpg)  
 *Figure 4 — Back view showing soldering and Logo.*
 
 ---
