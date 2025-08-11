@@ -6,10 +6,11 @@
 #include <Adafruit_NeoPixel.h>
 #include "Voxel.h"
 
-void initCube(const int* pins, int cubeSize); // No LED count needed
 extern Adafruit_NeoPixel** strips;
 extern Voxel*** voxelMatrix;
-extern int NUM_LAYERS;
+extern int CUBE_WIDTH;
+extern int CUBE_DEPTH;
+extern int CUBE_HEIGHT;
 extern int LED_CNT_PerLayer;
 
 #endif // CUBE_CONFIG_H

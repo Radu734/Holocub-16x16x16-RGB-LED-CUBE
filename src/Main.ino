@@ -1,15 +1,14 @@
 #include "CubeConfig.h"
+#include "CubeInit.h"
 #include "CubeGFX.h"
 
 constexpr int cubePins[] = {4, 5, 6, 7};
-constexpr int cubeSize = 4;
 
 void setup() {
-  initCube(cubePins, cubeSize);
+  initCube(cubePins, 4, 4, 4);
 }
 
 void loop() {
-  middle();
   dvdPlayer(1.0f, 1, 0, 0);
   displayMatrix();
 }
