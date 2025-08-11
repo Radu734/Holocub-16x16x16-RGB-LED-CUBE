@@ -1,14 +1,14 @@
-#include "CubeConfig.h"
 #include "CubeInit.h"
 #include "CubeGFX.h"
-
-constexpr int cubePins[] = {4, 5, 6, 7};
+#include "DvdPlayer/DvdPlayer.h"
 
 void setup() {
-  initCube(cubePins, 4, 4, 4);
+  Serial.begin(9600);
+  initCube(100);
 }
 
 void loop() {
-  dvdPlayer(1.0f, 1, 0, 0);
-  displayMatrix();
+  dvdPlayer(2, 0, 1, 1);
+  //gradient(); // Uncomment to see the gradient effect
+  displayMatrix(); 
 }

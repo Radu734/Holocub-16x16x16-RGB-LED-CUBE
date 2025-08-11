@@ -1,14 +1,15 @@
 #include "Rain.h"
 #include "CubeGFX.h"
+#include "CubeConfig.h"
 
 void rain(int dropsPerSecond, int voxelDropSpeedPerSecond) {
-  static uint32_t dropTime = millis();
-  static uint32_t spawnTime = millis();
+  static uint32_t lastDropTime = millis();
+  static uint32_t lastSpawnTime = millis();
   static uint32_t timeBetweenSpawnsMills = 1000 / dropsPerSecond;
   static uint32_t timeBetweenFallingMills = 1000 / voxelDropSpeedPerSecond;
 
 
-  if (millis() - dropTime > timeBetweenFallingMills) {
+  if (millis() - lastDropTime > timeBetweenFallingMills) {
     
     // delete bottom layer
     for (int x = 0; x < CUBE_WIDTH; x++) {
@@ -29,15 +30,15 @@ void rain(int dropsPerSecond, int voxelDropSpeedPerSecond) {
       }
     }
 
-    dropTime = millis();
+    lastDropTime = millis();
   }
 
-  if (millis() - spawnTime >= timeBetweenSpawnsMills) {
+  if (millis() - lastSpawnTime >= timeBetweenSpawnsMills) {
 
     // top of the cube
     voxelMatrix[random(0, CUBE_WIDTH)][random(0, CUBE_DEPTH)][CUBE_HEIGHT - 1].markAsOn();
 
-    spawnTime = millis();
+    lastSpawnTime = millis();
   }
 
 } 

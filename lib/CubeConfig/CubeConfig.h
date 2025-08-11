@@ -6,11 +6,18 @@
 #include <Adafruit_NeoPixel.h>
 #include "Voxel.h"
 
-extern Adafruit_NeoPixel** strips;
-extern Voxel*** voxelMatrix;
-extern int CUBE_WIDTH;
-extern int CUBE_DEPTH;
-extern int CUBE_HEIGHT;
-extern int LED_CNT_PerLayer;
+// Select your cube size here
+constexpr int CUBE_WIDTH = 4;
+constexpr int CUBE_DEPTH = 4;
+constexpr int CUBE_HEIGHT = 4;
+
+constexpr int LAYER_PINS[CUBE_HEIGHT] = {4, 5, 6, 7 /* fill with your pins */ };
+constexpr int LED_CNT_PerLayer = CUBE_WIDTH * CUBE_DEPTH;
+
+// Strips
+extern Adafruit_NeoPixel strips[CUBE_HEIGHT];
+
+// Voxel matrix
+extern Voxel voxelMatrix[CUBE_WIDTH][CUBE_DEPTH][CUBE_HEIGHT];
 
 #endif // CUBE_CONFIG_H

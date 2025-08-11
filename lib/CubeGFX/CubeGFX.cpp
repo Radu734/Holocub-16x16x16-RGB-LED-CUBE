@@ -2,6 +2,7 @@
 
 
 // ******** Infrastructure ********
+// applies a gradient effect to the led's marked as "on" in the voxelMatrix
 void gradient() {
   const uint8_t MAX_COLOR = 255;
 
@@ -21,14 +22,14 @@ void gradient() {
 
 }
 void setPixel(int indexInStrip, int x, int y, int z) {
-  strips[z]->setPixelColor(indexInStrip,
-    strips[z]->Color(voxelMatrix[x][y][z].r,
+  strips[z].setPixelColor(indexInStrip,
+    strips[z].Color(voxelMatrix[x][y][z].r,
                      voxelMatrix[x][y][z].g,
                      voxelMatrix[x][y][z].b));
 }
 void displayMatrix() {
   for (int z = 0; z < CUBE_HEIGHT; z++) {
-    strips[z]->clear(); // Clear before drawing new frame
+    strips[z].clear(); // Clear before drawing new frame
 
     for (int y = 0; y < CUBE_DEPTH; y++) {
       for (int x = 0; x < CUBE_WIDTH; x++) {
@@ -43,7 +44,7 @@ void displayMatrix() {
       }
     }
 
-    strips[z]->show();
+    strips[z].show();
   }
 }
 void changeLocationOfVoxel(int oldX, int oldY, int oldZ, int newX, int newY, int newZ) {
