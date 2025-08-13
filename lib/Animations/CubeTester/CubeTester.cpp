@@ -1,5 +1,5 @@
 #include "CubeTester.h"
-#include "CubeConfig.h"
+#include "CubeConfig/CubeConfig.h"
 
 // ******** Strip-only tests ********
 

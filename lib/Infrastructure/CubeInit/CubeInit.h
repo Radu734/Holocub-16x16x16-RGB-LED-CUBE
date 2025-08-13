@@ -3,8 +3,8 @@
 #define CUBE_INIT_H
 
 #include <Adafruit_NeoPixel.h>
-#include "CubeConfig.h"
-#include "Voxel.h"
+#include "CubeConfig/CubeConfig.h"
+#include "CubeTypes/CubeTypes.h"
 
 Adafruit_NeoPixel strips[CUBE_HEIGHT] = {
     Adafruit_NeoPixel(LED_CNT_PerLayer, LAYER_PINS[0], NEO_GRB + NEO_KHZ800),

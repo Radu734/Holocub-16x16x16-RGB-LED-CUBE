@@ -1,6 +1,6 @@
 #include "Rain.h"
-#include "CubeGFX.h"
-#include "CubeConfig.h"
+#include "CubeGFX/CubeGFX.h"
+#include "CubeConfig/CubeConfig.h"
 
 void rain(int dropsPerSecond, int voxelDropSpeedPerSecond) {
   static uint32_t lastDropTime = millis();
