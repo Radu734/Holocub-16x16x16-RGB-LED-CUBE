@@ -1,0 +1,14 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #
+A1,RaspberryPi_Pico_Common_THT,1,RaspberryPi_Pico_W,
+BZ1,Buzzer_12x9.5RM7.6,1,Buzzer,
+C1,0603,1,0.1 µF,
+C2,1206,1,10 µF,
+"C3, C4",0201,2,0.1 µF,
+D1,0603,1,LED,
+J1,PinHeader_1x16_P2.54mm_Vertical,1,Conn_01x16_Pin,
+J2,PinHeader_1x02_P2.54mm_Vertical,1,Power Rail,
+J4,PinHeader_1x02_P2.54mm_Vertical,1,Analog Pins,
+J5,PinHeader_1x07_P2.54mm_Vertical,1,Digital Pins,
+R1,0201,1,470,
+R2,0603,1,100,
+"U1, U2",SOIC127P1032X265-20N,2,74HCT245D,74HCT245D
