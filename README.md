@@ -21,9 +21,9 @@ The cube is controlled by a microcontroller (planned: **RPi Pico 2W / other capa
 | **Total LEDs**                | 4096 WS2812B RGB LEDs |
 | **LED Type**                  | WS2812B (5V, individually addressable) |
 | **PSUs**                      | 4 × 5v 350w |
-| **Data Lines**                | One per 8×8×16 “tower” (4 total) |
+| **Data Lines**                | One per 16×16 vertical layer (16 total) |
 | **LED Strip Arrangement**     | Snake layout per layer (serpentine wiring) |
-| **MCU**                       | Raspberry Pi Pico 2W (planned) / ATTINY88 |
+| **MCU**                       | Raspberry Pi Pico 2W (planned) / Teensy 4.1 (more power but no internal BLE and wifi) |
 | **Storage**                   | MicroSD card (frame/animation storage) |
 | **Power Injection**           | Multiple injection points per strip |
 | **Estimated Max Power**       | ~1.23 kW at full white (theoretical max) |
@@ -34,15 +34,14 @@ The cube is controlled by a microcontroller (planned: **RPi Pico 2W / other capa
 
 **Short description**  
 HoloBoard is a custom PCB designed for the Holocub project, acting as the main control and interface board.  
-It hosts a Raspberry Pi Pico 2W, integrates a piezo buzzer, and features two bidirectional logic-level shifters for safe communication between 3.3V and 5V components.
+It hosts a Raspberry Pi Pico 2W, integrates a piezo buzzer, and features two bidirectional logic-level shifters for for the communication between the pico and the WS2812B as 3v3 logic could cause interference.
 
 ## 🔧 Key Features
 - **MCU Slot:** Raspberry Pi Pico 2W header footprint (solder-in or socket).
 - **Audio Output:** 1 × piezo buzzer connector (with optional series resistor).
-- **Level Shifting:** 2 × bidirectional level shifter circuits (BSS138 + pull-ups) for 3.3V ↔ 5V I²C/UART/peripherals.
-- **Power Control:** Power selector header (3.3V / 5V) with decoupling capacitors.
-- **Connectivity:** I²C SDA / SCL breakout to convenient pads + screw terminals.
+- **Expandable hardware:** Left over pins (used mainly for I²C and SPI) routed to the side for extra connectivity.
 - **Build Quality:** Silk labels for pins, test pads, and mounting holes.
+- **Filter capacitors:** 2 filter caps for main power connection and 1 for each logic level shofter for optimal data transmission without interference.
 
 ## 📦 Minimal BOM
 - 1 × RP2040 (Pico 2W) socket / header footprint
@@ -72,13 +71,14 @@ It hosts a Raspberry Pi Pico 2W, integrates a piezo buzzer, and features two bid
 ---
 
 ## 🚀 Features
-- **Scalable architecture** – animations work on both 4×4×4 test cube and full 16×16×16 cube.
+- **Scalable architecture** – animations work on both 4×4×4 test cube and full 16×16×16 cube. 
 - **Voxel-based rendering** – uses a global `voxelMatrix[x][y][z]` buffer for color control.
 - **Procedural animations** – gradients, bouncing “DVD logo” effect, rain simulation, waves.
-- **Pre-rendered playback** – read animations stored in `.vox` or custom binary format.
+- **Pre-rendered playback** – read `.vox` file for animations or custom binary format.
 - **Custom GFX library** – draw lines, planes, waves, text in 3D space.
 - **SD card support** – load animations without reflashing firmware.
 - **Multi-PSU design** – independent PSU per cube tower for stable power delivery.
+- **Website based animation upload and debug** - Upload animations or images directly from a computer to the Holocube.
 
 ---
 
