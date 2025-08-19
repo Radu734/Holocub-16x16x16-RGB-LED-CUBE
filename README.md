@@ -20,7 +20,7 @@ The cube is controlled by a microcontroller (planned: **RPi Pico 2W / other capa
 | **Cube Size**                 | 16 × 16 × 16 voxels |
 | **Total LEDs**                | 4096 WS2812B RGB LEDs |
 | **LED Type**                  | WS2812B (5V, individually addressable) |
-| **PSUs**                      | 4 × [insert voltage/current rating] |
+| **PSUs**                      | 4 × [4X 5v 350w] |
 | **Data Lines**                | One per 8×8×16 “tower” (4 total) |
 | **LED Strip Arrangement**     | Snake layout per layer (serpentine wiring) |
 | **MCU**                       | Raspberry Pi Pico 2W (planned) / ATTINY88 |
