@@ -140,4 +140,4 @@ pio run --target upload
 ## 🙌 Credits
 - **Core team:** [Bernea Dragoș Dada & Teodosiu Radu]
 - **Special thanks:** MaltWiskey (inspiration & reference designs), Adafruit (NeoPixel library) and The C++ GODS.
-- Open Source software's used for the cube and the animation's: MagicaVoxel(3D sprite's designer)
+- **Open Source software's used for the cube and the animation's:** MagicaVoxel(3D sprite's designer)
