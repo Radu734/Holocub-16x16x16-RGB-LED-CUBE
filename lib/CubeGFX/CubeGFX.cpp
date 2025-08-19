@@ -1,5 +1,5 @@
 #include "CubeGFX.h"
-
+#include <SD.h>
 
 // ******** Infrastructure ********
 // applies a gradient effect to the led's marked as "on" in the voxelMatrix
@@ -59,4 +59,31 @@ void clearMatrix() {
       }
     }
   }
+}
+bool loadVoxelRaw(const char *filename) {
+  File file = SD.open(filename, FILE_READ);
+  if (!file) {
+    Serial.println("Failed to open file!");
+    return false;
+  }
+
+  size_t expectedSize = (size_t)CUBE_WIDTH * CUBE_DEPTH * CUBE_HEIGHT * 3;
+  if (file.size() < expectedSize) {
+    Serial.println("File too short!");
+    file.close();
+    return false;
+  }
+
+  for (int z = 0; z < CUBE_HEIGHT; z++) {
+    for (int y = 0; y < CUBE_DEPTH; y++) {
+      for (int x = 0; x < CUBE_WIDTH; x++) {
+        voxelMatrix[x][y][z].r = file.read(); // 1 byte
+        voxelMatrix[x][y][z].g = file.read(); // 1 byte
+        voxelMatrix[x][y][z].b = file.read(); // 1 byte
+      }
+    }
+  }
+
+  file.close();
+  return true;
 }

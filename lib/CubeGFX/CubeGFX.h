@@ -13,5 +13,6 @@ void setPixel(int indexInStrip, int x, int y, int z);
 void displayMatrix();
 void changeLocationOfVoxel(int oldX, int oldY, int oldZ, int newX, int newY, int newZ);
 void clearMatrix();
+bool loadVoxelRaw(const char *filename);
 
 #endif // CUBE_GFX_H
