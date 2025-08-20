@@ -5,6 +5,7 @@
 #include <Adafruit_NeoPixel.h>
 #include "CubeConfig.h"
 #include "Voxel.h"
+#include <SD.h>
 
 Adafruit_NeoPixel strips[CUBE_HEIGHT] = {
     Adafruit_NeoPixel(LED_CNT_PerLayer, LAYER_PINS[0], NEO_GRB + NEO_KHZ800),
@@ -22,6 +23,14 @@ inline void initCube(uint8_t brightness) {
         strips[i].clear(); 
         strips[i].show(); // clear LEDs
     }
+}
+
+inline void initSD(const int chipSelect) {
+    if (!SD.begin(chipSelect)) {
+        Serial.println("SD card initialization failed!");
+        return;
+    }
+    Serial.println("SD card initialized successfully.");
 }
 
 #endif // CUBE_INIT_H
