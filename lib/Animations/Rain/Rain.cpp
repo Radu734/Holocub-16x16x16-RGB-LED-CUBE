@@ -2,6 +2,8 @@
 #include "CubeGFX.h"
 #include "CubeConfig.h"
 
+// to fix: make default gradient for the rain drops that can be overridden
+// to add (feat): change drops per second to drops per layer per second using math with the speed of the drops
 void rain(int dropsPerSecond, int voxelDropSpeedPerSecond) {
   static uint32_t lastDropTime = millis();
   static uint32_t lastSpawnTime = millis();
