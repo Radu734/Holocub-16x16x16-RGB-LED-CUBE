@@ -1,7 +1,8 @@
 # **Holocub V2 – 16×16×16 RGB LED Cube**
 
-![LED Cube Example](docs/Videos/Prototype.mp4)  
 *A fully addressable 3D LED display for animations, games, and visual effects.*
+
+[![LED Cube Example](docs/Videos/Prototype_2.gif)](docs/Videos/Prototype.mp4)
 
 ---
 
